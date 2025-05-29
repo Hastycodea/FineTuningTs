@@ -65,4 +65,25 @@ function handleError(errmsg: string): never {
   throw new Error(errmsg);
 }
 
+const User = {
+  name: "andreh",
+  email: "andreh@th.com",
+  isActive: true,
+};
+
+function createUser({ name, isPaid }: { name: string; isPaid: boolean }) {
+  return { name, isPaid };
+}
+
+let andreh = createUser({ name: "Andreh", isPaid: false });
+andreh.name = "Brian";
+
+
+function createCourse():{name: string, price: number} {
+    return {name: 'Java', price: 999};
+}
+
+let sylla = createCourse()
+sylla.name
+
 export {};
