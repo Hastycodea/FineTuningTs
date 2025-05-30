@@ -10,7 +10,8 @@
 // }
 
 class User {
-  private _courseCount = 1;
+  // protected call be accessed by the child classes
+  protected _courseCount = 1;
   readonly city: string = "Nairobi";
   constructor(public email: string, public name: string) {}
 
@@ -22,7 +23,7 @@ class User {
     return this._courseCount;
   }
 
-// in the setters ther should be no return type
+  // in the setters ther should be no return type
   set courseCount(courseNum) {
     if (courseNum <= 1) {
       throw new Error("Course count should be more than 1");
@@ -33,7 +34,13 @@ class User {
 
   private deleteToken() {
     console.log("Token deleted");
-    
+  }
+}
+
+class SubUser extends User {
+  isFamily: boolean = true;
+  changeCourseCount() {
+    this._courseCount = 4;
   }
 }
 
