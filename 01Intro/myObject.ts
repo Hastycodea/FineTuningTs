@@ -18,17 +18,32 @@ type User = {
   name: string;
   email: string;
   isActive: boolean;
-  creditCardDetails?: number;
+  // ? indicates Optional
+  //   creditCardDetails?: number;
 };
 
+// mix and match
+
+type cardNumber = {
+  cardnumber: string;
+};
+
+type cardDate = {
+  cardDate: string;
+};
+
+type cardDetails = cardNumber &
+  cardDate & {
+    cvv: number;
+  };
 
 let myUser: User = {
-    _id: "dkdkdk",
-    name: "hech",
-    email: "h@h.com",
-    isActive: false
-}
+  _id: "dkdkdk",
+  name: "hech",
+  email: "h@h.com",
+  isActive: false,
+};
 
-myUser.email = 'kunat@j.com';
+myUser.email = "kunat@j.com";
 
 export {};
